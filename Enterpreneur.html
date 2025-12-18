@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Our Programs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            /* font-family: "Roboto Slab", serif; */
+            background: #d5cdec ;
+            color: #000;
+            overflow-x: hidden
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            margin-right: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+
+
+        }
+
+        .nav-links a.active {
+            color: #c0392b;
+
+        }
+
+        .nav-buttons .btn {
+            padding: 8px 20px;
+            border: 1px solid #000;
+            border-radius: 50px;
+            margin-left: 15px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background: linear-gradient(to right, #d5cdec 50%, #2b0774 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            color: #ffffff;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons .btn:hover {
+            background-position: left bottom;
+            color: #000;
+        }
+
+        /* Wave Section */
+        .wave-section {
+            position: relative;
+        }
+
+        .wave-section svg {
+            display: block;
+            width: 100%;
+            height: 190zzpx;
+            filter: drop-shadow(0px -16px 26px white);
+        }
+
+
+        .sub-nav {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 40px;
+
+        }
+
+        .sub-nav a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .about-section {
+            text-align: center;
+            padding: 50px 100px;
+        }
+
+
+        .brush-title {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 2rem;
+            font-family: "Roboto Slab", serif;
+        }
+
+        .brush-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+
+
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-size: 16px;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.1rem;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="about.html">About us </a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="nav-buttons">
+            <a href="booknow.html" class="btn">Book now </a>
+            <a href="donate.html" class="btn">Donate</a>
+        </div>
+    </header>
+    <!-- Yellow Wave -->
+    <section class="wave-section">
+        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
+            <path fill=" #2b0774 " d="M0,0 C400,100 1040,0 1440,80 L1440,0 L0,0 Z"></path>
+        </svg>
+    </section>
+    <section class="about-section">
+        <h2 class="brush-title">Entrepreneurship Program</h2>
+
+        <p>
+            At Lamp Educational and Charitable Trust, we believe that true empowerment begins with knowledge,
+            opportunity, and the confidence to create change. In line with this vision, we are introducing our upcoming
+            Entrepreneurship Program, designed to inspire and equip aspiring entrepreneurs with the tools to transform
+            their ideas into impactful ventures. The program will take participants step by step through the
+            entrepreneurial journey—starting from developing an innovative idea, building a sustainable business model,
+            understanding customer needs, and crafting a clear go-to-market strategy. <br><br>
+
+            Through practical workshops and guided mentorship, participants will learn how to prepare professional pitch
+            presentations and approach funders with confidence. They will also gain insights into financial literacy,
+            resource management, and the importance of social responsibility in business. Real-world case studies,
+            success stories, and interactive sessions with industry experts will provide them with a strong foundation
+            for navigating challenges and seizing opportunities. <br><br>
+
+            By the end of the program, participants will not only have the confidence to launch their ventures but will
+            also develop the entrepreneurial mindset of resilience, problem-solving, and innovation. At Lamp Educational
+            and Charitable Trust, we envision this program as more than just a training initiative—it is a pathway for
+            young minds to become job creators, community builders, and leaders of tomorrow <br><br>
+        </p>
+    </section>
+</body>
+
+</html>
