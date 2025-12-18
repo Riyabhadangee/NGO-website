@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book now</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            /* font-family: "Roboto Slab", serif; */
+            background:#f0fdff;
+            color: #000;
+            overflow-x: hidden
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            margin-right: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+
+
+        }
+
+        .nav-links a.active {
+            color: #c0392b;
+
+        }
+
+        .nav-buttons .btn {
+            padding: 8px 20px;
+            border: 1px solid #000;
+            border-radius: 50px;
+            margin-left: 15px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background: linear-gradient(to right,  #f0fdff 50%, #039d98 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            color: #fff;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons .btn:hover {
+            background-position: left bottom;
+            color: #000;
+        }
+
+        /* Wave Section */
+        .wave-section {
+            position: relative;
+        }
+
+        .wave-section svg {
+            display: block;
+            width: 100%;
+            height: 190zzpx;
+            filter: drop-shadow(0px -16px 26px white);
+        }
+        .box {
+            width: 100%;
+            height: 40px;
+        }
+            body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      margin: 0;
+      background:#f0fdff;
+      color: #333;
+    }
+
+    .wizard {
+      width: 80%;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 25px 35px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .progress { width: 100%; height: 8px; background: #e0faff; border-radius: 5px; margin-bottom: 20px; overflow: hidden; }
+    .progress-bar { height: 8px; width: 0; background: linear-gradient(90deg,  #63b5b3, #039d98); transition: width 0.5s ease; }
+
+    .steps { display: flex; justify-content: space-between; margin-bottom: 25px; }
+    .step { flex: 1; text-align: center; padding: 10px 5px; border-bottom: 4px solid #ccc; transition: all 0.3s ease; }
+    .step.active { border-color: #039d98; font-weight: bold; color:  #039d98; }
+
+    .step-content { display: none; animation: fadeIn 0.6s ease-in-out; }
+    .step-content.active { display: block; }
+
+    .btn {
+      padding: 12px 22px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #0e5d69,#3fb1ad);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      margin: 10px 5px;
+      font-size: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 6px 16px rgba(0,0,0,0.25); }
+
+    .card {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 10px 0;
+      background: #fff;
+      transition: 0.3s;
+      text-align: center;
+    }
+    .card:hover { background: #e0faff; box-shadow: 0 6px 14px rgba(0,0,0,0.1); }
+
+    .item-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+    }
+    .counter-btn {
+      background: #039d98;
+      border: none;
+      color: white;
+      font-size: 18px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .counter-btn:hover { background: #039d98; }
+    .item-qty { font-weight: bold; }
+
+    .capacity { margin-top: 15px; font-weight: bold; color: #039d98; }
+
+    input, select {
+      padding: 12px; margin: 10px 0; width: 100%;
+      border: 1px solid #ccc; border-radius: 10px; font-size: 15px;
+      transition: border 0.3s;
+    }
+    input:focus, select:focus { border: 1px solid #039d98; outline: none; }
+
+    .summary { background: #e0faff; padding: 15px; border-radius: 10px; margin-top: 20px; }
+
+    .alert { background: #039d98; color: #fff; padding: 10px 15px; border-radius: 8px; margin: 10px 0; display: none; animation: fadeIn 0.5s ease; }
+
+
+       
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="about.html">About us </a>
+            <a href="contact.html" >Contact Us</a>
+        </div>
+        <div class="nav-buttons">
+            <a href="booknow.html" class="btn">Book now </a>
+            <a href="donate.html" class="btn">Donate</a>
+        </div>
+    </header>
+    <!-- Yellow Wave -->
+    <section class="wave-section">
+        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#039d98" d="M0,0 C400,100 1040,0 1440,80 L1440,0 L0,0 Z"></path>
+        </svg>
+    </section>
+    <div class="box">
+
+    </div>
+     <div class="wizard">
+    <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+    <div class="steps">
+      <div class="step active">1. Choose Service</div>
+      <div class="step">2. Donation Details</div>
+      <div class="step">3. Schedule Pickup</div>
+      <div class="step">4. Donor Verification</div>
+      <div class="step">5. Place Order</div>
+    </div>
+    <div class="alert" id="alertBox"></div>
+
+    <!-- Step 1 -->
+    <div class="step-content active" id="step1">
+      <h2>Choose Service</h2>
+      <div id="locationStage">
+        <label>Enter Location:</label>
+        <input type="text" id="locationInput" placeholder="Enter your location">
+        <button class="btn" onclick="detectLocation()">Auto Detect Location</button>
+        <button class="btn" onclick="showServiceOptions()">Next</button>
+      </div>
+      <div id="serviceStage" style="display:none;">
+        <h3>Select Pickup Service:</h3>
+        <div class="card" onclick="selectService('Light Pickup (2-Wheeler)',199)">Light Pickup (2-Wheeler) - ₹199</div>
+        <div class="card" onclick="selectService('Medium to Heavy Pickup',799)">Medium to Heavy Pickup - ₹799</div>
+        <div class="card" onclick="selectService('Collection Drive Pickup',6500)">Collection Drive Pickup - ₹6500</div>
+        <button class="btn" onclick="prevStep()">Back</button>
+        <button class="btn" onclick="nextStep()">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-content" id="step2">
+      <h2>Pick Your Donation Items</h2>
+      <div class="items">
+        <div class="card">
+          Clothes
+          <div class="item-controls">
+            <button class="counter-btn" onclick="updateItem('Clothes',-1)">-</button>
+            <span class="item-qty" id="ClothesQty">0</span>
+            <button class="counter-btn" onclick="updateItem('Clothes',1)">+</button>
+          </div>
+        </div>
+        <div class="card">
+          Footwear
+          <div class="item-controls">
+            <button class="counter-btn" onclick="updateItem('Footwear',-1)">-</button>
+            <span class="item-qty" id="FootwearQty">0</span>
+            <button class="counter-btn" onclick="updateItem('Footwear',1)">+</button>
+          </div>
+        </div>
+        <div class="card">
+          Stationery
+          <div class="item-controls">
+            <button class="counter-btn" onclick="updateItem('Stationery',-1)">-</button>
+            <span class="item-qty" id="StationeryQty">0</span>
+            <button class="counter-btn" onclick="updateItem('Stationery',1)">+</button>
+          </div>
+        </div>
+        <div class="card">
+          Toys
+          <div class="item-controls">
+            <button class="counter-btn" onclick="updateItem('Toys',-1)">-</button>
+            <span class="item-qty" id="ToysQty">0</span>
+            <button class="counter-btn" onclick="updateItem('Toys',1)">+</button>
+          </div>
+        </div>
+        <div class="card">
+          Books
+          <div class="item-controls">
+            <button class="counter-btn" onclick="updateItem('Books',-1)">-</button>
+            <span class="item-qty" id="BooksQty">0</span>
+            <button class="counter-btn" onclick="updateItem('Books',1)">+</button>
+          </div>
+        </div>
+        <div class="card">
+          Provisions
+          <div class="item-controls">
+            <button class="counter-btn" onclick="updateItem('Provisions',-1)">-</button>
+            <span class="item-qty" id="ProvisionsQty">0</span>
+            <button class="counter-btn" onclick="updateItem('Provisions',1)">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="capacity">Capacity Used: <span id="capacity">0</span>%</div>
+      <button class="btn" onclick="prevStep()">Back</button>
+      <button class="btn" onclick="nextStep()">Next</button>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-content" id="step3">
+      <h2>Schedule a Pickup</h2>
+      <label>Choose a Slot:</label>
+      <select id="pickupSlot">
+        <option value="">-- Select --</option>
+        <option>10:00 AM - 12:00 PM</option>
+        <option>12:00 PM - 2:00 PM</option>
+        <option>2:00 PM - 4:00 PM</option>
+      </select>
+      <button class="btn" onclick="prevStep()">Back</button>
+      <button class="btn" onclick="nextStep()">Next</button>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-content" id="step4">
+      <h2>Donor Verification</h2>
+      <input type="text" id="donorName" placeholder="Full Name">
+      <input type="email" id="donorEmail" placeholder="Email">
+      <input type="text" id="donorAddress" placeholder="Full Address">
+      <input type="text" id="donorCity" placeholder="City">
+      <input type="text" id="donorPincode" placeholder="Pincode">
+      <button class="btn" onclick="prevStep()">Back</button>
+      <button class="btn" onclick="nextStep()">Next</button>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step-content" id="step5">
+      <h2>Order Summary</h2>
+      <div class="summary" id="orderSummary"></div>
+      <button class="btn" onclick="prevStep()">Back</button>
+      <button class="btn" onclick="submitOrder()">Place Order</button>
+    </div>
+  </div>
+
+  <script>
+    let currentStep = 1;
+    let selectedService = "";
+    let selectedPrice = 0;
+    let items = {};
+    let capacity = 0;
+
+    function showStep(step) {
+      document.querySelectorAll('.step-content').forEach((el,i)=>{
+        el.classList.remove('active');
+        if(i===step-1) el.classList.add('active');
+      });
+      document.querySelectorAll('.step').forEach((el,i)=>{
+        el.classList.remove('active');
+        if(i===step-1) el.classList.add('active');
+      });
+      document.getElementById("progressBar").style.width = ((step-1)/4*100)+"%";
+      currentStep = step;
+    }
+
+    function showAlert(msg){
+      const alertBox=document.getElementById("alertBox");
+      alertBox.innerText=msg;
+      alertBox.style.display="block";
+      setTimeout(()=>{ alertBox.style.display="none"; },3000);
+    }
+
+    function nextStep() {
+      if(currentStep===1 && (!selectedService || !document.getElementById('locationInput').value)){
+        showAlert("Please enter location and select a service."); return;
+      }
+      if(currentStep===2 && capacity===0){
+        showAlert("Please add at least one item."); return;
+      }
+      if(currentStep===3 && !document.getElementById('pickupSlot').value){
+        showAlert("Please select a pickup slot."); return;
+      }
+      if(currentStep===4){
+        let n=document.getElementById('donorName').value;
+        let e=document.getElementById('donorEmail').value;
+        let a=document.getElementById('donorAddress').value;
+        let c=document.getElementById('donorCity').value;
+        let p=document.getElementById('donorPincode').value;
+        if(!n||!e||!a||!c||!p){ showAlert("Please fill all donor details."); return; }
+      }
+      if(currentStep<5) showStep(currentStep+1);
+      if(currentStep===4) buildSummary();
+    }
+
+    function prevStep(){ if(currentStep>1) showStep(currentStep-1); }
+
+    function detectLocation() {
+      if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(pos=>{
+          document.getElementById('locationInput').value =
+            `Lat: ${pos.coords.latitude}, Lng: ${pos.coords.longitude}`;
+        });
+      } else { showAlert("Geolocation not supported!"); }
+    }
+
+    function showServiceOptions(){
+      let location = document.getElementById('locationInput').value;
+      if(!location){ showAlert("Please enter or detect your location first!"); return; }
+      document.getElementById('locationStage').style.display="none";
+      document.getElementById('serviceStage').style.display="block";
+    }
+
+    function selectService(service, price) {
+      selectedService = service;
+      selectedPrice = price;
+      showAlert(`Selected: ${service} - ₹${price}`);
+    }
+
+    function updateItem(item, change){
+      if(!items[item]) items[item]=0;
+      if(change===1 && capacity>=100){ showAlert("100% capacity reached."); return; }
+      if(change===-1 && items[item]<=0) return;
+      items[item]+=change;
+      capacity+=change*10;
+      if(capacity<0) capacity=0;
+      if(capacity>100) capacity=100;
+      document.getElementById(item+"Qty").innerText=items[item];
+      document.getElementById('capacity').innerText = capacity;
+    }
+
+    function buildSummary(){
+      let name=document.getElementById('donorName').value;
+      let email=document.getElementById('donorEmail').value;
+      let addr=document.getElementById('donorAddress').value;
+      let city=document.getElementById('donorCity').value;
+      let pin=document.getElementById('donorPincode').value;
+      let slot=document.getElementById('pickupSlot').value;
+
+      let itemList=Object.keys(items).filter(i=>items[i]>0).map(i=>`${i} (${items[i]})`).join(", ");
+      let summary=`
+        <p><strong>Service:</strong> ${selectedService} (₹${selectedPrice})</p>
+        <p><strong>Items:</strong> ${itemList||"No items selected"}</p>
+        <p><strong>Capacity Used:</strong> ${capacity}%</p>
+        <p><strong>Pickup Slot:</strong> ${slot}</p>
+        <p><strong>Donor:</strong> ${name}, ${email}</p>
+        <p><strong>Address:</strong> ${addr}, ${city}, ${pin}</p>
+      `;
+      document.getElementById('orderSummary').innerHTML=summary;
+    }
+
+    function submitOrder(){ showAlert("Thank you! Your donation pickup has been scheduled."); setTimeout(()=>window.location.reload(),2000); }
+  </script>
+</body>
+
+</html>
