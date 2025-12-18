@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Our Programs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            /* font-family: "Roboto Slab", serif; */
+            background:#d7ceed;
+            color: #000;
+            overflow-x: hidden
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            margin-right: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+
+
+        }
+
+        .nav-links a.active {
+            color: #c0392b;
+
+        }
+
+        .nav-buttons .btn {
+            padding: 8px 20px;
+            border: 1px solid #000;
+            border-radius: 50px;
+            margin-left: 15px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background: linear-gradient(to right, #d7ceed 50%, #3b0291 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            color: #ffffff;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons .btn:hover {
+            background-position: left bottom;
+            color: #000;
+        }
+
+        /* Wave Section */
+        .wave-section {
+            position: relative;
+        }
+
+        .wave-section svg {
+            display: block;
+            width: 100%;
+            height: 190zzpx;
+            filter: drop-shadow(0px -16px 26px white);
+        }
+
+
+        .sub-nav {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 40px;
+
+        }
+
+        .sub-nav a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+           .about-section {
+            text-align: center;
+            padding: 50px 100px;
+        }
+
+
+        .brush-title {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 2rem;
+            font-family: "Roboto Slab", serif;
+        }
+
+        .brush-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+
+
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-size: 16px;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.1rem;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="about.html">About us </a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="nav-buttons">
+            <a href="booknow.html" class="btn">Book now </a>
+            <a href="donate.html" class="btn">Donate</a>
+        </div>
+    </header>
+    <!-- Yellow Wave -->
+    <section class="wave-section">
+        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#3b0291" d="M0,0 C400,100 1040,0 1440,80 L1440,0 L0,0 Z"></path>
+        </svg>
+    </section>
+    <section class="about-section">
+        <h2 class="brush-title">Bridging the Donation Gap</h2>
+
+        <p>
+            The “Bridging the Donation Gap” initiative is designed to address one of the most pressing needs in
+            healthcare the shortage of safe and timely blood supply. Every day, thousands of patients require blood
+            transfusions due to surgeries, accidents, medical conditions, or childbirth complications. Unfortunately,
+            many lives are lost because of delays or the unavailability of matching blood groups. Through this program,
+            we aim to create a reliable, community driven network that ensures blood is always within reach when it is
+            needed the most.<br><br>
+
+            Our efforts begin with blood donation camps, regularly conducted in schools, colleges, offices, and
+            community spaces, making it convenient for individuals to come forward and contribute. We believe that
+            awareness is as important as action; therefore, we conduct volunteer training programs where young people
+            and local leaders are empowered with the skills to organize and manage blood donation drives effectively. <br><br>
+
+            To expand the reach, we collaborate with hospitals and partner organizations in large-scale blood drives,
+            while also deploying mobile donation units to take this life-saving initiative directly to rural and
+            underserved areas. Beyond collection, we emphasize community engagement, encouraging citizens to see blood
+            donation not as a one-time act, but as a regular responsibility towards society. <br><br>
+
+            In today’s digital era, awareness spreads fastest online. That’s why our program includes digital awareness
+            campaigns, where we use social media, videos, and online campaigns to educate and inspire people about the
+            impact of donating blood. Every single unit of blood collected has the potential to save multiple lives, and
+            through collective action, we strive to close the gap between demand and availability. <br> <br>
+
+            The “Bridging the Donation Gap” program is more than just a health initiative — it is a movement of
+            compassion, responsibility, and community service. By participating, you don’t just donate blood; you donate
+            hope, time, and the gift of life. <br><br>
+        </p>
+    </section>
+</body>
+
+</html>
