@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Our Programs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            /* font-family: "Roboto Slab", serif; */
+            background: #f0fdff;
+            color: #000;
+            overflow-x: hidden
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            margin-right: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+
+
+        }
+
+        .nav-links a.active {
+            color: #c0392b;
+
+        }
+
+        .nav-buttons .btn {
+            padding: 8px 20px;
+            border: 1px solid #000;
+            border-radius: 50px;
+            margin-left: 15px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background: linear-gradient(to right, #f0fdff 50%, #039d98 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            color: #ffffff;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons .btn:hover {
+            background-position: left bottom;
+            color: #000;
+        }
+
+        /* Wave Section */
+        .wave-section {
+            position: relative;
+        }
+
+        .wave-section svg {
+            display: block;
+            width: 100%;
+            height: 190zzpx;
+            filter: drop-shadow(0px -16px 26px white);
+        }
+
+
+        .sub-nav {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 40px;
+
+        }
+
+        .sub-nav a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .about-section {
+            text-align: center;
+            padding: 50px 100px;
+        }
+
+
+        .brush-title {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 2rem;
+            font-family: "Roboto Slab", serif;
+        }
+
+        .brush-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+
+
+        .about-section {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-size: 16px;
+            text-align:center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.1rem;
+
+        }
+        .about-section ul li{
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="about.html">About us </a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="nav-buttons">
+            <a href="booknow.html" class="btn">Book now </a>
+            <a href="donate.html" class="btn">Donate</a>
+        </div>
+    </header>
+    <!-- Yellow Wave -->
+    <section class="wave-section">
+        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#039d98" d="M0,0 C400,100 1040,0 1440,80 L1440,0 L0,0 Z"></path>
+        </svg>
+    </section>
+    <section class="about-section">
+        <div class="container">
+    <div class="card" role="main">
+      <header>
+        <h1>Terms &amp; Conditions</h1>
+        <p class="muted">Effective date: <strong>As of the date you access the site</strong></p>
+        <p>Welcome to Lamp  Trust. These terms and conditions govern your use of our website located at <code class="url">https://lamptrust.com</code>. By accessing or using this website you accept these terms. If you do not agree, please do not continue to use the website.</p>
+      </header>
+
+      <section id="cookies">
+        <h2>Cookies</h2>
+        <p>We use cookies to personalize your experience. By accessing our website you consent to the use of required cookies.</p>
+        <p>A cookie is a small text file placed on your device by a web server. Cookies cannot execute code or deliver viruses. Cookies are unique to you and readable only by the issuing domain.</p>
+        <p>We may collect, store, and track information using cookies for statistical or marketing purposes and to operate the site. You can accept or decline optional cookies. Some required cookies are essential for the website to function; these do not require consent. Required cookies may include third-party cookies used by integrated services (for example, embedded third-party video players).</p>
+      </section>
+
+      <section id="license">
+        <h2>License &amp; Intellectual Property</h2>
+        <p>Unless otherwise stated, Lamp  Trust and/or its licensors own the intellectual property rights for all material on this website. All intellectual property rights are reserved.</p>
+        <p>You may access material on this site for your personal, non-commercial use subject to the restrictions below. You must not, without prior written permission:</p>
+        <ul>
+          <li>Copy, republish, reproduce, duplicate, or redistribute material from the site.</li>
+          <li>Sell, rent, or sub-license material from the site.</li>
+        </ul>
+        <p>This agreement begins on the date you access the website.</p>
+      </section>
+
+      <section id="comments">
+        <h2>Comments &amp; User-Generated Content</h2>
+        <p>Certain parts of the site may allow users to post opinions, comments, or other content ("Comments"). We do not pre-screen, edit, publish, or review Comments prior to their appearance on the site. Comments reflect the views of the poster and not the Trust, its agents, or affiliates.</p>
+        <p>To the fullest extent permitted by law, Lamp Educational and Charitable Trust is not liable for any Comments or any loss, damage, or expense resulting from their use or appearance on the site. We reserve the right to monitor and remove any Comments we consider inappropriate, offensive, or in breach of these Terms.</p>
+        <p>By posting Comments you warrant and represent that:</p>
+        <ul>
+          <li>You are entitled to post the Comments and have all necessary rights, licenses, and consents to do so.</li>
+          <li>The Comments do not infringe any third-party intellectual property rights (copyright, patent, trademark).</li>
+          <li>The Comments do not contain defamatory, libelous, obscene, offensive, or otherwise unlawful material, or invade anyone’s privacy.</li>
+          <li>You will not use Comments for solicitation, promotion of business, or unlawful activity.</li>
+        </ul>
+        <p>You grant the Trust a non-exclusive, worldwide, royalty-free license to use, reproduce, edit, and authorize others to use and edit your Comments in any form, format, or media.</p>
+      </section>
+
+      <section id="hyperlinking">
+        <h2>Hyperlinking to Our Content</h2>
+        <p>The following organizations may link to our website without prior written approval:</p>
+        <ul>
+          <li>Government agencies</li>
+          <li>Search engines</li>
+          <li>News organizations</li>
+          <li>Online directory distributors (in the same manner as other listed businesses)</li>
+          <li>System-wide accredited businesses (excluding soliciting non-profits, charity shopping malls, and charity fundraising groups)</li>
+        </ul>
+        <p>These parties may link to our homepage, publications, or other website information provided the link is not deceptive, does not falsely imply endorsement, and is contextually appropriate.</p>
+        <p>We may also consider link requests from other organizations such as reputable consumer/business information sources, dot-com community sites, charity associations, internet portals, and educational or trade associations. Approval is at our discretion and depends on factors like reputational fit and mutual benefit.</p>
+        <p>If you belong to an organization listed above and wish to link to our website, email us with your name, organization, contact details, the URL of your site, the URLs you intend to link from, and the URLs on our site you wish to link to. Please allow 2–3 weeks for a response.</p>
+        <p>Approved organizations may link to us by:</p>
+        <ul>
+          <li>Using our corporate name</li>
+          <li>Using the URL being linked to</li>
+          <li>Using any description of our website that fits the context of the linking site</li>
+        </ul>
+        <p>No use of Lamp Educational and Charitable Trust's logo or artwork is permitted without a trademark license agreement.</p>
+      </section>
+
+      <section id="content-liability">
+        <h2>Content Liability</h2>
+        <p>We are not responsible for content that appears on external websites which link to us. You agree to indemnify and defend us against all claims arising from content on your website. No link should appear on any website that could be interpreted as libelous, obscene, criminal, or infringing third-party rights.</p>
+      </section>
+
+      <section id="reservation">
+        <h2>Reservation of Rights</h2>
+        <p>We reserve the right to ask you to remove all links, or any particular link, to our website. You agree to promptly remove such links upon request.</p>
+        <p>We also reserve the right to amend these Terms and our linking policy at any time; by continuing to link to our website you agree to be bound by the updated terms.</p>
+      </section>
+
+      <section id="removal">
+        <h2>Removal of Links</h2>
+        <p>If you find a link on our website that you consider offensive for any reason, you may contact us to request its removal. We will consider removal requests but are not obligated to comply or respond directly.</p>
+      </section>
+
+      <section id="accuracy">
+        <h2>Accuracy of Information</h2>
+        <p>We do not guarantee that the information on this website is complete, accurate, or up to date. We do not promise that the website will remain available or that the material will be kept current.</p>
+      </section>
+
+      <section id="disclaimer">
+        <h2>Disclaimer &amp; Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law, we exclude all representations, warranties, and conditions relating to our website and your use of it. Nothing in this disclaimer will:</p>
+        <ul>
+          <li>Limit or exclude liability for death or personal injury caused by our negligence;</li>
+          <li>Limit or exclude liability for fraud or fraudulent misrepresentation;</li>
+          <li>Limit any liabilities in a way not permitted by applicable law; or</li>
+          <li>Exclude liabilities that cannot be excluded under applicable law.</li>
+        </ul>
+        <p>The limitations and prohibitions of liability in this section apply to all liabilities arising under this disclaimer, including contract, tort, and statutory duties.</p>
+        <p>Where the site and its services are provided free of charge, we will not be liable for any loss or damage of any nature.</p>
+      </section>
+
+      <footer>
+        <p class="muted">If you have questions about these Terms and Conditions, please contact Lamp  Trust via the contact details on our website.</p>
+      </footer>
+    </div>
+  </div>
+       
+    </section>
+</body>
+
+</html>
