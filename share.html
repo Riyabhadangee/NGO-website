@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Our Programs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            /* font-family: "Roboto Slab", serif; */
+            background: #ffe9f3;
+            color: #000;
+            overflow-x: hidden
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            margin-right: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+
+
+        }
+
+        .nav-links a.active {
+            color: #c0392b;
+
+        }
+
+        .nav-buttons .btn {
+            padding: 8px 20px;
+            border: 1px solid #000;
+            border-radius: 50px;
+            margin-left: 15px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background: linear-gradient(to right, #ffe5f8 50%, #64053b 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            color: #ffffff;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons .btn:hover {
+            background-position: left bottom;
+            color: #000;
+        }
+
+        /* Wave Section */
+        .wave-section {
+            position: relative;
+        }
+
+        .wave-section svg {
+            display: block;
+            width: 100%;
+            height: 190zzpx;
+            filter: drop-shadow(0px -16px 26px white);
+        }
+
+
+        .sub-nav {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 40px;
+
+        }
+
+        .sub-nav a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .about-section {
+            text-align: center;
+            padding: 50px 100px;
+        }
+
+
+        .brush-title {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 2rem;
+            font-family: "Roboto Slab", serif;
+        }
+
+        .brush-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+
+
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-size: 16px;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.1rem;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="about.html">About us </a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="nav-buttons">
+            <a href="booknow.html" class="btn">Book now </a>
+            <a href="donate.html" class="btn">Donate</a>
+        </div>
+    </header>
+    <!-- Yellow Wave -->
+    <section class="wave-section">
+        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#64053b  " d="M0,0 C400,100 1040,0 1440,80 L1440,0 L0,0 Z"></path>
+        </svg>
+    </section>
+    <section class="about-section">
+        <h2 class="brush-title">Share & Save Lives</h2>
+
+        <p>
+            The “Share & Save Lives” initiative is built on the belief that awareness spreads most effectively through
+            personal connections and collective efforts. While blood donation itself saves lives, sharing the message of
+            its importance can multiply the impact many times over. This program encourages individuals to become
+            ambassadors of the cause by promoting donation in their own circles and communities. <br><br>
+
+            The journey begins with encouraging friends and family, motivating them to participate in donation drives
+            and setting an example through personal action. By normalizing blood donation within households and peer
+            groups, we aim to make it a regular practice rather than a rare occasion. Alongside personal encouragement,
+            we focus on promoting blood donation awareness through campaigns, talks, and events that highlight real
+            stories of lives saved and the urgent need for regular donors. <br><br>
+
+            To extend this message further, the program also emphasizes the distribution of educational materials—from
+            brochures and posters to digital infographics and videos—making accurate information easily accessible to
+            everyone. These resources help clear doubts, inspire confidence, and show how a single act of generosity can
+            create a ripple effect of hope and healing. <br><br>
+
+            Through “Share & Save Lives,” we aspire to transform every supporter into an advocate, spreading the call to
+            donate and inspiring communities to come together for a life-saving mission. Every share leads to greater
+            awareness, and every donation ensures another life is saved. <br><br>
+        </p>
+    </section>
+</body>
+
+</html>
