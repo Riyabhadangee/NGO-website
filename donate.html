@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Roboto+Slab&display=swap"
+        rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            /* font-family: "Roboto Slab", serif; */
+            background: #f0fdff;
+            color: #000;
+            overflow-x: hidden
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            margin-right: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+
+
+        }
+
+        .nav-links a.active {
+            color: #c0392b;
+
+        }
+
+        .nav-buttons .btn {
+            padding: 8px 20px;
+            border: 1px solid #000;
+            border-radius: 50px;
+            margin-left: 15px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background: linear-gradient(to right, #f0fdff 50%, #039d98 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            color: #fff;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons .btn:hover {
+            background-position: left bottom;
+            color: #000;
+        }
+
+        /* Wave Section */
+        .wave-section {
+            position: relative;
+        }
+
+        .wave-section svg {
+            display: block;
+            width: 100%;
+            height: 190zzpx;
+            filter: drop-shadow(0px -16px 26px white);
+        }
+
+
+        .sub-nav {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 40px;
+
+        }
+
+        .sub-nav a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .box {
+            width: 100%;
+            height: 40px;
+        }
+
+        :root {
+            --accent: #035f5a;
+            --accent-2: #04857f;
+            --soft: #f7f9f8;
+            --muted: #6b6b6b;
+            --card-bg: rgba(255, 255, 255, 0.98);
+            --glass: rgba(255, 255, 255, 0.6);
+            --radius: 14px;
+            --shadow: 0 8px 30px rgba(2, 10, 10, 0.12);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+
+        }
+
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(180deg, #eaf7f6 0%, #fbfffe 100%);
+        }
+
+        .content-wrapper {
+            min-height: calc(100vh - 100px);
+            /* leave space for header/wave */
+            display: flex;
+            align-items: center;
+            /* vertical center */
+            justify-content: center;
+            /* horizontal center */
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 980px;
+            margin: auto;
+            /* key for centering */
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 22px;
+        }
+
+
+
+        h1 {
+            margin: 0 0 6px;
+            font-size: 22px;
+            color: var(--accent)
+        }
+
+        p.lead {
+            margin: 0 0 18px;
+            color: var(--muted)
+        }
+
+        .donation-card {
+            background: linear-gradient(180deg, rgba(3, 95, 90, 0.05), rgba(4, 133, 127, 0.03));
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 6px 18px rgba(2, 10, 10, 0.04) inset;
+        }
+
+        .amounts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px
+        }
+
+        .amt-btn {
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(3, 95, 90, 0.12);
+            background: white;
+            cursor: pointer;
+            font-weight: 600
+        }
+
+        .amt-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent)
+        }
+
+        .custom-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 12px
+        }
+
+        .custom-row input[type="number"] {
+            flex: 1;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #e5eceb
+        }
+
+        label.small {
+            font-size: 13px;
+            color: var(--muted);
+            display: block;
+            margin-bottom: 6px
+        }
+
+        .methods {
+            display: flex;
+            gap: 8px;
+            margin: 12px 0
+        }
+
+        .method {
+            flex: 1;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(3, 95, 90, 0.12);
+            text-align: center;
+            cursor: pointer
+        }
+
+        .method.active {
+            background: var(--accent-2);
+            color: white
+        }
+
+        .right-panel {
+            padding: 12px;
+            border-radius: 12px;
+            background: linear-gradient(180deg, #fff, #fbfffe);
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+
+        .qr-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px dashed rgba(3, 95, 90, 0.08);
+            background: var(--glass)
+        }
+
+        .qr-wrap img {
+            width: 240px;
+            height: 240px;
+            object-fit: contain;
+            border-radius: 8px
+        }
+
+        .qr-actions {
+            display: flex;
+            gap: 8px
+        }
+
+        .btn {
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: none;
+            background: var(--accent);
+            color: white;
+            cursor: pointer
+        }
+
+        .btn.ghost {
+            background: transparent;
+            border: 1px solid rgba(3, 95, 90, 0.12);
+            color: var(--accent)
+        }
+
+        .info {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .flex-row {
+            display: flex;
+            gap: 10px;
+            align-items: center
+        }
+
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px
+        }
+
+        input[type=text],
+        input[type=email] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #e5eceb
+        }
+
+        footer {
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center;
+            margin-top: 10px
+        }
+
+        /* hover aesthetic */
+        .amt-btn:hover,
+        .method:hover,
+        .btn.ghost:hover {
+            transform: translateY(-3px);
+            transition: all 180ms
+        }
+
+        /* responsive */
+        @media (max-width:980px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .right-panel img {
+                width: 200px;
+                height: 200px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="about.html">About us </a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="nav-buttons">
+            <a href="booknow.html" class="btn">Book now </a>
+            <a href="donate.html" class="btn">Donate</a>
+        </div>
+    </header>
+    <!-- Yellow Wave -->
+    <section class="wave-section">
+        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#039d98" d="M0,0 C400,100 1040,0 1440,80 L1440,0 L0,0 Z"></path>
+
+        </svg>
+
+        <div class="box">
+
+        </div>
+        <div class="container" role="main">
+            <section class="hero">
+                <h1>Support Our Cause</h1>
+                <p class="lead">Your donation helps us run programs and reach more people. Choose an amount, pick a
+                    payment method and scan or copy the QR to complete the payment.</p>
+
+                <div class="donation-card">
+                    <label class="small">Choose amount</label>
+                    <div class="amounts" role="list">
+                        <button class="amt-btn" data-amount="100">₹100</button>
+                        <button class="amt-btn" data-amount="250">₹250</button>
+                        <button class="amt-btn" data-amount="500">₹500</button>
+                        <button class="amt-btn" data-amount="1000">₹1000</button>
+                        <button class="amt-btn" data-amount="2000">₹2000</button>
+                        <button class="amt-btn" data-amount="5000">₹5000</button>
+                    </div>
+
+                    <div class="custom-row">
+                        <input id="customAmount" type="number" min="1" placeholder="Or enter custom amount (₹)" />
+                        <button class="btn ghost" id="setCustom">Set</button>
+                    </div>
+
+                    <label class="small">Payment method</label>
+                    <div class="methods" role="list">
+                        <div class="method active" data-method="upi">UPI / QR</div>
+                        <div class="method" data-method="paypal">PayPal</div>
+                        <div class="method" data-method="card">Card</div>
+                    </div>
+
+                    <div class="form-row">
+                        <div style="flex:1">
+                            <label class="small">Your name</label>
+                            <input id="donorName" type="text" placeholder="Full name (optional)" />
+                        </div>
+                        <div style="width:220px">
+                            <label class="small">Email</label>
+                            <input id="donorEmail" type="email" placeholder="you@example.com (optional)" />
+                        </div>
+                    </div>
+
+                    <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+                        <button class="btn" id="prepare">Prepare Payment</button>
+                        <button class="btn ghost" id="reset">Reset</button>
+                    </div>
+
+                    <p class="info">We respect your privacy — names and emails are optional. For UPI payments, scan the
+                        QR or copy the UPI ID.</p>
+                </div>
+
+                <footer>Need a receipt? We'll email one if you provide your email.<br>
+                    <a href="terms.html">Terms & conditions</a>
+                </footer>
+            </section>
+
+            <aside class="right-panel" aria-labelledby="qrLabel">
+                <div class="qr-wrap">
+                    <div style="text-align:center">
+                        <strong id="qrLabel">UPI QR & Details</strong>
+                        <div class="info" style="margin-top:6px">Scan the QR with any UPI app (Google Pay/PhonePe/Paytm
+                            etc.)</div>
+                    </div>
+
+                    <img id="qrImg" src="https://chart.googleapis.com/chart?cht=qr&chs=240x240&chl=Welcome"
+                        alt="QR code" />
+
+                    <div class="qr-actions">
+                        <button class="btn" id="downloadQR">Download QR</button>
+                        <button class="btn ghost" id="copyVpa">Copy UPI ID</button>
+                    </div>
+
+                    <div style="width:100%;display:flex;flex-direction:column;gap:8px;margin-top:6px">
+                        <div class="flex-row">
+                            <label style="min-width:90px" class="small">UPI ID</label>
+                            <input id="upiId" type="text" value="your-upi@bank" />
+                        </div>
+
+                        <div class="flex-row">
+                            <label style="min-width:90px" class="small">Amount</label>
+                            <div id="displayAmount" style="font-weight:700">₹0</div>
+                        </div>
+
+                        <div class="flex-row">
+                            <label style="min-width:90px" class="small">Message</label>
+                            <input id="msg" type="text" placeholder="For: Donation / Campaign" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div
+                    style="padding:10px;border-radius:12px;background:linear-gradient(180deg,#fff,#f7fffd);border:1px solid rgba(3,95,90,0.04)">
+                    <h3 style="margin:0 0 6px">Quick actions</h3>
+                    <p class="info">After preparing the payment, use the QR or copy details to complete the transfer in
+                        your chosen app.</p>
+                    <div style="display:flex;gap:8px;margin-top:10px">
+                        <button class="btn" id="openUpi">Open UPI (deep link)</button>
+                        <button class="btn ghost" id="copySummary">Copy Summary</button>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+
+
+        <script>
+            // state
+            let selectedAmount = 0;
+            let selectedMethod = 'upi';
+
+            const amtButtons = document.querySelectorAll('.amt-btn');
+            const methods = document.querySelectorAll('.method');
+            const displayAmount = document.getElementById('displayAmount');
+            const qrImg = document.getElementById('qrImg');
+            const upiInput = document.getElementById('upiId');
+            const msgInput = document.getElementById('msg');
+            const donorEmail = document.getElementById('donorEmail');
+            const donorName = document.getElementById('donorName');
+
+            function setActiveAmt(btn) {
+                amtButtons.forEach(b => b.classList.remove('active'));
+                if (btn) { btn.classList.add('active') }
+            }
+
+            amtButtons.forEach(b => {
+                b.addEventListener('click', () => {
+                    selectedAmount = Number(b.dataset.amount);
+                    setActiveAmt(b);
+                    document.getElementById('customAmount').value = '';
+                    updateAmountDisplay();
+                })
+            })
+
+            document.getElementById('setCustom').addEventListener('click', () => {
+                const val = Number(document.getElementById('customAmount').value || 0);
+                if (!val || val <= 0) { alert('Please enter a valid amount'); return }
+                selectedAmount = val;
+                setActiveAmt(null);
+                updateAmountDisplay();
+            })
+
+            methods.forEach(m => {
+                m.addEventListener('click', () => {
+                    methods.forEach(x => x.classList.remove('active'));
+                    m.classList.add('active');
+                    selectedMethod = m.dataset.method;
+                    // show/hide QR section title
+                    document.getElementById('qrLabel').textContent = selectedMethod === 'upi' ? 'UPI QR & Details' : (selectedMethod === 'paypal' ? 'PayPal link' : 'Card / Bank Transfer');
+                })
+            })
+
+            function updateAmountDisplay() {
+                displayAmount.textContent = selectedAmount ? `₹${selectedAmount.toLocaleString()}` : '₹0';
+            }
+
+            function buildUpiString() {
+                // UPI deep link standard format
+                const vpa = (upiInput.value || '').trim();
+                const am = selectedAmount || 0;
+                const msg = (msgInput.value || '').trim() || 'Donation';
+                // Example UPI url:upi://pay?pa=merchant@bank&pn=Name&tn=Note&am=10&cu=INR
+                const pa = encodeURIComponent(vpa);
+                const pn = encodeURIComponent(donorName.value || 'Donor');
+                const tn = encodeURIComponent(msg);
+                const amEnc = am ? `&am=${encodeURIComponent(am)}` : '';
+                return `upi://pay?pa=${pa}&pn=${pn}${amEnc}&tn=${tn}&cu=INR`;
+            }
+
+            function updateQR() {
+                if (selectedMethod === 'upi') {
+                    const vpa = upiInput.value || 'your-upi@bank';
+                    const am = selectedAmount || '';
+                    const note = msgInput.value || '';
+                    // Use Google Chart API to generate QR. If offline, image will fallback to alt.
+                    // Data encoded: UPI deep link (most UPI apps understand either vpa or deep link)
+                    const data = `upi://pay?pa=${encodeURIComponent(vpa)}${am ? `&am=${encodeURIComponent(am)}` : ''}${note ? `&tn=${encodeURIComponent(note)}` : ''}&cu=INR`;
+                    const url = `https://chart.googleapis.com/chart?cht=qr&chs=240x240&chl=${encodeURIComponent(data)}`;
+                    qrImg.src = url;
+                } else if (selectedMethod === 'paypal') {
+                    // simple PayPal.me link placeholder
+                    const url = `https://chart.googleapis.com/chart?cht=qr&chs=240x240&chl=${encodeURIComponent('https://www.paypal.me/YourPage/' + (selectedAmount || ''))}`;
+                    qrImg.src = url;
+                } else {
+                    const text = `Pay via bank transfer - A/C: 1234567890, IFSC: EXAMP0001, Amount: ${selectedAmount || ''}`;
+                    qrImg.src = `https://chart.googleapis.com/chart?cht=qr&chs=240x240&chl=${encodeURIComponent(text)}`;
+                }
+            }
+
+            document.getElementById('prepare').addEventListener('click', () => {
+                if (!selectedAmount || selectedAmount <= 0) { alert('Please pick or enter an amount first'); return }
+                updateQR();
+                alert('Payment prepared. Use the QR or copy details to complete the transfer in your app.');
+            })
+
+            document.getElementById('reset').addEventListener('click', () => {
+                selectedAmount = 0; selectedMethod = 'upi';
+                setActiveAmt(null); methods.forEach(x => x.classList.remove('active')); methods[0].classList.add('active');
+                document.getElementById('customAmount').value = ''; donorName.value = ''; donorEmail.value = ''; msgInput.value = ''; upiInput.value = 'your-upi@bank'; updateAmountDisplay(); qrImg.src = 'https://chart.googleapis.com/chart?cht=qr&chs=240x240&chl=Welcome';
+            })
+
+            document.getElementById('downloadQR').addEventListener('click', () => {
+                // create an ephemeral link to download current img src
+                const link = document.createElement('a');
+                link.href = qrImg.src;
+                link.download = `donation-qr-${Date.now()}.png`;
+                document.body.appendChild(link); link.click(); link.remove();
+            })
+
+            document.getElementById('copyVpa').addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(upiInput.value.trim());
+                    alert('UPI ID copied to clipboard');
+                } catch (e) {
+                    prompt('Copy this UPI ID manually:', upiInput.value.trim());
+                }
+            })
+
+            document.getElementById('copySummary').addEventListener('click', async () => {
+                const summary = `Donate ${selectedAmount ? `₹${selectedAmount}` : '(amount not set)'} via ${selectedMethod.toUpperCase()}\nUPI:${upiInput.value}\nNote:${msgInput.value}\nName:${donorName.value || '(not provided)'}\nEmail:${donorEmail.value || '(not provided)'}`;
+                try { await navigator.clipboard.writeText(summary); alert('Summary copied to clipboard'); }
+                catch (e) { prompt('Copy summary:', summary); }
+            })
+
+            document.getElementById('openUpi').addEventListener('click', () => {
+                if (selectedMethod !== 'upi') { alert('UPI deep links are for UPI method.'); return }
+                if (!upiInput.value.trim()) { alert('Enter UPI ID first'); return }
+                const link = buildUpiString();
+                // attempt to open deep link. This may be blocked in browsers; still we try.
+                window.location.href = link;
+            })
+
+            // small nicety: update QR whenever upi/message/amount changes after preparation
+            upiInput.addEventListener('input', () => { if (selectedAmount) updateQR(); });
+            msgInput.addEventListener('input', () => { if (selectedAmount) updateQR(); });
+
+            // initialize
+            updateAmountDisplay();
+
+            fetch("http://localhost:5000/donate", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name: "Riya", amount: 500 })
+            })
+                .then(res => res.json())
+                .then(data => console.log=(data));
+
+             
+        </script>
+</body>
+
+</html>
