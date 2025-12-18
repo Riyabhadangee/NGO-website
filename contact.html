@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            /* font-family: "Roboto Slab", serif; */
+            background: #fff;
+            color: #000;
+            overflow-x: hidden
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            margin-right: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+
+
+        }
+
+        .nav-links a.active {
+            color: #c0392b;
+
+        }
+
+        .nav-buttons .btn {
+            padding: 8px 20px;
+            border: 1px solid #000;
+            border-radius: 50px;
+            margin-left: 15px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background: linear-gradient(to right, #bb8933 50%, #EEC94C 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            color: #000;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons .btn:hover {
+            background-position: left bottom;
+        }
+
+        /* Wave Section */
+        .wave-section {
+            position: relative;
+        }
+
+        .wave-section svg {
+            display: block;
+            width: 100%;
+            height: 190zzpx;
+            filter: drop-shadow(0px -16px 26px white);
+        }
+
+
+        .sub-nav {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 40px;
+
+        }
+
+        .sub-nav a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        /* About Section */
+        .about-section {
+            text-align: center;
+            padding: 50px 100px;
+        }
+
+
+        .brush-title {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 2rem;
+            font-family: "Roboto Slab", serif;
+        }
+
+        .brush-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+
+
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-size: 16px;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.1rem;
+
+        }
+
+        .vision-management-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+            margin: 50px auto;
+            max-width: 1300px;
+            padding: 20px;
+        }
+
+        #vision,
+        #mission {
+            flex: 1;
+            max-width: 550px;
+            background: rgba(250, 237, 210, 0.8);
+            padding: 50px 40px;
+            border-radius: 60px;
+            position: relative;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 12px 40px rgba(37, 37, 37, 0.15);
+            clip-path: path("M0,60 Q50,0 100,60 T200,60 T400,60 T600,60 Q650,0 700,60 L700,300 Q650,340 600,300 T400,300 T200,300 T100,300 Q50,340 0,300 Z");
+
+        }
+
+        #vision,
+        #mission {
+            animation: floatCard 4s ease-in-out infinite;
+        }
+
+        @keyframes floatCard {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-14px);
+            }
+        }
+
+        #vision::before,
+        #vision::after,
+        #mission::before,
+        #mission::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 25px;
+            background: #EEC94C;
+            border-radius: 50% / 50%;
+            z-index: -1;
+        }
+
+        #vision::before,
+        #mission::before {
+            top: -12px;
+        }
+
+        #vision::after,
+        #mission::after {
+            bottom: -12px;
+        }
+
+        #vision .title,
+        #mission .title {
+            font-size: 30px;
+            font-weight: bold;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        #vision .title::before,
+        #mission .title::before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            right: -10px;
+            bottom: 6px;
+            height: 50%;
+            background: #EEC94C;
+            border-radius: 15px;
+            z-index: -1;
+        }
+
+        #vision p,
+        #mission p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .title {
+            font-family: "Roboto Slab", serif;
+
+        }
+
+        .box1 {
+
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .founder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            text-align: left;
+            /* background: rgba(250, 237, 210, 0.8);
+            border-radius: 50px; */
+        }
+
+        .founder-img {
+            width: 300px;
+            height: auto;
+            border-radius: 360px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 0px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .founder-img:hover {
+            transform: scale(1.05) translateY(-8px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+        }
+
+
+
+        .founder-text {
+            max-width: 600px;
+            background: #EEC94C;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .founder-text:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 30px 30px rgba(0, 0, 0, 0.5);
+        }
+
+
+
+        .founder-text h3 {
+            margin: 0 0 10px;
+            font-size: 1.7rem;
+            font-weight: bold;
+            font-family: "Roboto Slab", serif;
+
+        }
+
+        .founder-text p {
+            font-size: 1rem;
+            line-height: 1.6;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .info-up-svg {
+            padding: 30px;
+            margin: -60px;
+        }
+
+        .backgroundsvg {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            /* vertical gap between rows */
+        }
+
+        .background-row {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            /* allows wrapping if screen is small */
+        }
+
+
+        .backgroundimage,
+        .backgroundimage1,
+        .backgroundimage2,
+        .backgroundimage3,
+        .foundersvg {
+            position: relative;
+            width: 400px;
+            /* keep your SVG width */
+            max-width: 100%;
+            /* responsive for smaller devices */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .backgroundimage:hover,
+        .backgroundimage1:hover,
+        .backgroundimage2:hover,
+        .backgroundimage3:hover,
+        .foundersvg:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 30px 30px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .backgroundimage svg,
+        .backgroundimage1 svg,
+        .backgroundimage2 svg,
+        .backgroundimage3 svg,
+        .foundersvg {
+            width: 100%;
+            height: auto;
+            display: block;
+            background-color: rgba(250, 237, 210, 0.8);
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .backgroundimage svg:hover,
+        .backgroundimage1 svg:hover,
+        .backgroundimage2 svg:hover,
+        .backgroundimage3 svg:hover,
+        .foundersvg:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 30px 30px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .backgroundimage img,
+        .backgroundimage1 img,
+        .backgroundimage2 img,
+        .backgroundimage3 img,
+        .foundersvg img {
+            position: absolute;
+            top: 50%;
+            /* center vertically */
+            left: 50%;
+            /* center horizontally */
+            transform: translate(-50%, -50%);
+            width: 60%;
+            /* adjust image size relative to SVG */
+            height: auto;
+            border-radius: 50%;
+            /* optional - makes image circular */
+        }
+
+        @media (max-width: 700px) {
+            .backgroundsvg svg {
+                max-width: 90%;
+                /* Shrinks proportionally */
+            }
+        }
+
+        .text1 {
+            position: absolute;
+            top: 0%;
+            left: 7%;
+            line-height: 0.4rem;
+            font-size: 20px;
+        }
+
+        .text1 p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .text2 {
+            position: absolute;
+            top: 0%;
+            left: 31%;
+            line-height: 0.4rem;
+            font-size: 20px;
+        }
+
+        .text2 p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .text3 {
+            position: absolute;
+            top: 0%;
+            left: 45%;
+            line-height: 0.4rem;
+            font-size: 20px;
+        }
+
+        .text3 p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .text4 {
+            position: absolute;
+            top: 0%;
+            left: 7%;
+            line-height: 0.4rem;
+            font-size: 20px;
+        }
+
+        .text4 p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .aboutFonder {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+        }
+
+        .ovel {
+            position: relative;
+            width: 220px;
+            top: -100px;
+            /* Move ellipse up a bit */
+            margin-bottom: -50px;
+            /* Pull heading closer to ellipse */
+        }
+
+        .ovel svg {
+            width: 100%;
+            height: auto;
+            display: block;
+
+        }
+
+        .ab-headtext {
+            position: absolute;
+            top: 62%;
+            /* Adjust vertically */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333;
+            font-family: 'Roboto Slab', serif;
+            font-size: 35px;
+            font-weight: 600;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+
+        .foundersvg {
+            position: relative;
+            width: 400px;
+            max-width: 100%;
+        }
+
+        .info-container {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-size: 16px;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.1rem;
+            margin-top: 0;
+
+        }
+
+        .values {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .ovel1 {
+            position: relative;
+            width: 220px;
+            top: -100px;
+            /* Move ellipse up a bit */
+            margin-bottom: -50px;
+            /* Pull heading closer to ellipse */
+        }
+
+        .ovel1 svg {
+            width: 100%;
+            height: auto;
+            display: block;
+
+        }
+
+        .val-text {
+            position: absolute;
+            top: 62%;
+            /* Adjust vertically */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333;
+            font-family: 'Roboto Slab', serif;
+            font-size: 35px;
+            font-weight: 600;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .value-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 50px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .value-box {
+            background: linear-gradient(145deg, #EEC94C, #ead89f);
+            color: #333;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-box:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+        }
+
+        .value-box h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #222;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        .value-box p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .ngo-container {
+            max-width: 900px;
+            margin: 40px auto;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        .ngo-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .ngo-table {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .ngo-table table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+
+        .ngo-table th {
+            background: #f8f9fa;
+            color: #333;
+            text-align: left;
+            padding: 12px 18px;
+            width: 35%;
+            border-bottom: 1px solid #e0e0e0;
+            font-weight: 600;
+        }
+
+        .ngo-table td {
+            padding: 12px 18px;
+            color: #555;
+            border-bottom: 1px solid #e0e0e0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .ngo-table tr:last-child th,
+        .ngo-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .ngo-table a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .ngo-table a:hover {
+            text-decoration: underline;
+        }
+
+        .ngo-container {
+            max-width: 900px;
+            margin: 40px auto;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        .ngo-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+            background: #EEC94C;
+            padding: 12px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .ngo-table {
+            border: 1px solid #ddd;
+            border-radius: 0 0 12px 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            background: rgba(250, 237, 210, 0.8);
+        }
+
+        .ngo-table table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+
+        .ngo-table th {
+            background: #EEC94C;
+            color: #333;
+            text-align: left;
+            padding: 12px 18px;
+            width: 35%;
+            border-bottom: 1px solid #e0e0e0;
+            font-weight: 600;
+        }
+
+        .ngo-table td {
+            padding: 12px 18px;
+            color: #555;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .ngo-table tr:last-child th,
+        .ngo-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .ngo-table a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .ngo-table a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            position: relative;
+            width: 100%;
+        }
+
+        .footer-image img {
+            width: 100%;
+            display: block;
+        }
+
+        .footer-text {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            background-color: #EEC94C;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #1a1a1a;
+            
+
+            /* Center content inside box */
+            display: flex;
+            justify-content: center;
+            /* Horizontal centering */
+            align-items: center;
+            /* Vertical centering */
+            text-align: center;
+            /* Align text center */
+        }
+
+
+
+        .footer-column {
+            width: 100%;
+        }
+
+        .footer-column h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .footer-column p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .footer-column strong {
+            font-weight: bold;
+        }
+
+        .icon {
+            font-size: 18px;
+            color: black;
+            margin-right: 5px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            /* Removes underline */
+        }
+
+        a:hover {
+            text-decoration: underline;
+            /* Optional - underline on hover */
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: black;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        /* Optional: Different background colors for each icon */
+        .social-icons a.facebook {
+            background-color: #3b5998;
+        }
+
+        .social-icons a.instagram {
+            background-color: #E4405F;
+        }
+
+        .social-icons a.linkedin {
+            background-color: #0077b5;
+        }
+
+        .social-icons a.twitter {
+            background-color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="about.html" class="active">About us </a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="nav-buttons">
+            <a href="booknow.html" class="btn">Book now </a>
+            <a href="donate.html" class="btn">Donate</a>
+        </div>
+    </header>
+    <!-- Yellow Wave -->
+    <section class="wave-section">
+        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
+            <path fill=" #EEC94C" d="M0,0 C400,100 1040,0 1440,80 L1440,0 L0,0 Z"></path>
+        </svg>
+
+        <nav class="sub-nav">
+            <a href="#vision">Vision & Mission</a>
+            <a href="#managment">Management</a>
+            <a href="#advisors">Values & Info</a>
+            <a href="#legacy">Legacy</a>
+
+        </nav>
+    </section>
+    <!-- About Content -->
+    <section class="about-section">
+        <h2 class="brush-title">About Us</h2>
+
+        <p>
+            Lamp foundation Trust is a Pune-based nonprofit organization dedicated to
+            empowering unprivileged children through inclusive and foundational education.
+            Since 2019, we have been working to bridge learning gaps among students from Grade 3 to 12 and
+            support school dropouts to continue their education.<br><br>
+            In the heart of North Pune—across RK Shivaji nagar, Pimpri, PCMC, Wakad,
+            Baner—we reach out to children who
+            are academically disconnected and most at risk. Our goal is to make sure no child is ignored,
+            forgotten, or left out of learning.<br><br>
+            Through our innovative EduPod Hubs, we create safe, community-based learning spaces that focus
+            on literacy, numeracy, critical thinking, and 21st-century skills. Our programs are
+            aligned with NEP 2020 and NIPUN Bharat goals, and are rooted in joyful, culturally relevant, and
+            student-centered learning practices.<br><br>
+            At Lamp, we believe every child deserves a second chance to learn, grow, and thrive — because
+            education is the light that transforms lives.
+            We are a community of educators, students, and partners committed to reinventing what After
+            school can be—so that every child, no matter their background, can discover their voice, build their
+            skills, and lead change in the world.<br><br>
+            We don’t just prepare students for exams. We prepare them for life
+        </p>
+    </section>
+    <div class="vision-management-container">
+        <section class="box" id="vision">
+            <h2 class="title">Vision</h2>
+            <p>We aim to nurture young people of all backgrounds into
+                compassionate, just, and integrous leaders.</p>
+        </section>
+
+        <section class="box" id="mission">
+            <h2 class="title">Mission</h2>
+            <p>Our mission is to provide quality education, encourage
+                innovation, and inspire lifelong learning for all.</p>
+        </section>
+    </div>
+    <section class="box" id="managment">
+        <section class="info">
+            <div class="info-up-svg">
+                <!-- Top SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100">
+                    <g fill="#FAEDD2">
+                        <path
+                            d="M0 0v99.7C62 69 122.4 48.7 205 66c83.8 17.6 160.5 20.4 240-12 54-22 110-26 173-10a392.2 392.2 0 0 0 222-5c55-17 110.3-36.9 160-27.2V0H0Z"
+                            opacity=".5"></path>
+                        <path
+                            d="M0 0v74.7C62 44 122.4 28.7 205 46c83.8 17.6 160.5 25.4 240-7 54-22 110-21 173-5 76.5 19.4 146.5 23.3 222 0 55-17 110.3-31.9 160-22.2V0H0Z">
+                        </path>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="box1">
+                <div class="founder">
+                    <img src="founderimage1.png" alt="Founder Image" class="founder-img">
+                    <div class="founder-text">
+                        <h3>Mr. Rajveer Sharma Founder and CEO</h3>
+                        <p>
+                            At the heart of Lamp foundation Trust is its
+                            founder, Mr. Rajveer Sharma  a compassionate leader
+                            whose life journey reflects resilience, service, and a deep belief
+                            that education is the key to ending poverty.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100">
+                <path
+                    d="M0 0v47.6l5-2c1 0 11 3 12 0 2 3 6-3 6 0 0-4 12 3 12 0 0 3 15-1 17 0 2-2 5-1 6 0 0-2 6 2 6 0s2 4 4 0c5 2 12-3 16 0 2-2 4-3 4 0 0 2 6-1 6 0 1 4 15-2 17 0h7c0 1 3-3 6 0h17c2 2 3 1 6 0h6c1-2 21-1 24 0 2 1 4 2 6 0 0-1 22 4 24 0 0 0 5-3 5 0 2-2 10 2 12 0 2 2 6 1 6 0 2 3 4-2 6 0 1 0 25-2 25 1l10-1c3 1 6 6 7 0 1 5 4-2 6 0 2-2 4 3 5 0h12c6 1 36 2 36 0 0 2 3 0 6 0h6c5-2 7 4 11 0 2 0 15 2 17 0h13c3-4 5 1 7 0h29c0-3 6 0 6 0h5c0 2 16-1 18 0 1 4 9-1 12 0s6-2 6 0c8-2 3 4 13 0h10c3 4 19 1 19 0 2 0 21 1 23-1 1 4 3-1 6 1 1 2 11-1 12-1 3 3 9 0 12 1 3-4 6 1 6 0h6c0-3 5 1 6-1 0 3 2 1 4 1 3 4 10-1 13 0 3-2 6-1 6 0 2 2 2 0 6 0 1-2 6 2 6 0 2 0 4 5 6 0h18c2 3 4 1 6 0l6-1c3 2 12 3 17 1 14 3 18 1 24 0 2-1 3 3 5 0 6 2 10-1 16 0 1 3 6 0 9 0 0-2 3 2 5 0 6-6 8 7 13 0 0-2 5 2 5 0 3 3 10 0 10 0 1 2 5-2 8 0 3-1 8 3 12 0h6c2 1 10 4 12 0h6c1-1 5 2 6 0 1 2 4-1 6 0 0-2 5 3 6-1 2 1 6 5 5 1 1 1 3-2 6 0 2-1 5 3 6 0 0 1 6 2 6 0 2 3 4-4 6 0 0-2 3 2 6 0 3 0 6 3 6 0 5 3 8-1 13 0 3-4 6 1 6 0h5c0-1 9 2 12 0 1-1 9 3 11 0h6c2 2 4 4 7 0 3 2 5-4 5-1 10 4 15-2 18 2 0-1 6 2 6-2 0 0 6-2 6 1 1 6 12 2 12 0 1 3 4-3 7 2 2-2 5 2 5 0 1 5 4-5 6 0 2-1 4 2 6 0 1 3 1 0 5 0V0H0Z"
+                    fill="#FAEDD2"></path>
+            </svg>
+        </section>
+        <section class="backgroundsvg">
+            <div class="background-row">
+                <div class="backgroundimage">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+                        <path d="M0 0h230c138 0 250 112 250 250v230H250C112 480 0 368 0 230V0Z" fill="#EEC94C"></path>
+                    </svg>
+                    <img src="peetha.png">
+                    <div class="text1">
+                        <h3> Mrs.Smitha </h3>
+                        <p> Teacher - 8 Grade to 12 Grade</p>
+                    </div>
+                </div>
+                <div class="backgroundimage1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+                        <path
+                            d="M240 0A240 240 0 0 0 0 240v240h240a240 240 0 0 0 240-240V0H240Zm0 360a120 120 0 1 1 0-240 120 120 0 0 1 0 240Z"
+                            fill="#EEC94C"></path>
+                    </svg>
+                    <img src="divya.png">
+                    <div class="text2">
+                        <h3> Mrs.Divya </h3>
+                        <p> Head Of Network and Outreach</p>
+                    </div>
+                </div>
+            </div>
+            <div class="background-row">
+                <div class="backgroundimage2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+                        <path
+                            d="M240 0A240 240 0 0 0 0 240v240h240a240 240 0 0 0 240-240V0H240Zm0 360a120 120 0 1 1 0-240 120 120 0 0 1 0 240Z"
+                            fill="#EEC94C"></path>
+                    </svg>
+                    <img src="deepu.png">
+                    <div class="text3">
+                        <h3> Miss.Jean</h3>
+                        <p> Secretary</p>
+                    </div>
+                </div>
+                <div class="backgroundimage3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+                        <path d="M0 0h230c138 0 250 112 250 250v230H250C112 480 0 368 0 230V0Z" fill="#EEC94C"></path>
+                    </svg>
+                    <img src="Kanchana.png">
+                    <div class="text4">
+                        <h3>Mrs.Kanchana</h3>
+                        <p> Teacher - 1 to 7 Grade</p>
+                    </div>
+                </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100">
+                <path
+                    d="M0 0v47.6l5-2c1 0 11 3 12 0 2 3 6-3 6 0 0-4 12 3 12 0 0 3 15-1 17 0 2-2 5-1 6 0 0-2 6 2 6 0s2 4 4 0c5 2 12-3 16 0 2-2 4-3 4 0 0 2 6-1 6 0 1 4 15-2 17 0h7c0 1 3-3 6 0h17c2 2 3 1 6 0h6c1-2 21-1 24 0 2 1 4 2 6 0 0-1 22 4 24 0 0 0 5-3 5 0 2-2 10 2 12 0 2 2 6 1 6 0 2 3 4-2 6 0 1 0 25-2 25 1l10-1c3 1 6 6 7 0 1 5 4-2 6 0 2-2 4 3 5 0h12c6 1 36 2 36 0 0 2 3 0 6 0h6c5-2 7 4 11 0 2 0 15 2 17 0h13c3-4 5 1 7 0h29c0-3 6 0 6 0h5c0 2 16-1 18 0 1 4 9-1 12 0s6-2 6 0c8-2 3 4 13 0h10c3 4 19 1 19 0 2 0 21 1 23-1 1 4 3-1 6 1 1 2 11-1 12-1 3 3 9 0 12 1 3-4 6 1 6 0h6c0-3 5 1 6-1 0 3 2 1 4 1 3 4 10-1 13 0 3-2 6-1 6 0 2 2 2 0 6 0 1-2 6 2 6 0 2 0 4 5 6 0h18c2 3 4 1 6 0l6-1c3 2 12 3 17 1 14 3 18 1 24 0 2-1 3 3 5 0 6 2 10-1 16 0 1 3 6 0 9 0 0-2 3 2 5 0 6-6 8 7 13 0 0-2 5 2 5 0 3 3 10 0 10 0 1 2 5-2 8 0 3-1 8 3 12 0h6c2 1 10 4 12 0h6c1-1 5 2 6 0 1 2 4-1 6 0 0-2 5 3 6-1 2 1 6 5 5 1 1 1 3-2 6 0 2-1 5 3 6 0 0 1 6 2 6 0 2 3 4-4 6 0 0-2 3 2 6 0 3 0 6 3 6 0 5 3 8-1 13 0 3-4 6 1 6 0h5c0-1 9 2 12 0 1-1 9 3 11 0h6c2 2 4 4 7 0 3 2 5-4 5-1 10 4 15-2 18 2 0-1 6 2 6-2 0 0 6-2 6 1 1 6 12 2 12 0 1 3 4-3 7 2 2-2 5 2 5 0 1 5 4-5 6 0 2-1 4 2 6 0 1 3 1 0 5 0V0H0Z"
+                    fill="#FAEDD2"></path>
+            </svg>
+
+        </section>
+    </section>
+    <section class="box" id="legacy">
+        <div class="aboutFonder">
+            <div class="ovel">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+                    <g fill="#EEC94C">
+                        <ellipse cx="240" cy="500" rx="240" ry="120"></ellipse>
+                    </g>
+                </svg>
+            </div>
+            <div class="ab-headtext">
+                <h3>About our Founder</h3>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <h3>Mr. Rajveer Sharma , Founder and CEO</h3>
+            <p> Over the past 20 years, xyz has worked across diverse industries—Human Resources,
+                Hospitality, Education, and Renewable Energy—gaining a wide perspective on people,
+                opportunities, and the challenges that communities face. Today, he works as a Compliance and
+                Payroll Analyst, but his true calling lies on helping the helpless through education, believing
+                education is the solution to end poverty, and build their skills, and lead change in the world.
+
+                Since 2010, xyz has dedicated his evenings, weekends, and heart to serving
+                underprivileged children through education. What began as a small act of kindness soon grew into
+                a mission—to ensure that no child in Bengaluru is denied the right to learn, dream, and thrive.
+                Lighting Lives Through Lamp
+                Through Lamp foundation
+                Trust, he has created programs like the Study
+                Centre, Project Kum Kum, Pass On Your Books,
+                and Revive Earth—each designed to restore
+                dignity, provide opportunities, and build a
+                future where children and women rise above
+                their circumstances. His guiding belief is simple
+                yet powerful:
+                "Education is the most sustainable solution to
+                end poverty. Every child deserves not just
+                lessons, but a chance to live with dignity and
+                hope."
+                Beyond Work: A Traveler and Food Enthusiast
+                Outside his professional and philanthropic
+                commitments, Jaganathan is an avid traveler
+                and a passionate food critic. His love for
+                exploring cultures is often expressed through
+                his culinary adventures. From Delhi to
+                Kanyakumari, he has savored some of India's
+                most delicious biryanis—each plate a story,
+                each journey a memory.
+                This love for travel and food reflects his larger
+                philosophy: that life is meant to be explored,
+                experienced, and shared—just as education
+                must be shared with those who need it most.
+                His Guiding Spirit
+                With warmth, humility, and an unshakable belief in human potential, Jaganathan continues to
+                walk alongside children and communities—proving that when compassion meets action,
+                forgotten sparks can become shining lights</p>
+        </div>
+    </section>
+    <section class="box" id="advisors">
+        <div class="values">
+            <div class="ovel1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+                    <g fill="#EEC94C">
+                        <ellipse cx="240" cy="500" rx="240" ry="120"></ellipse>
+                    </g>
+                </svg>
+            </div>
+            <div class="val-text">
+                <h3>Our Values</h3>
+            </div>
+        </div>
+        <div class="value-container">
+            <div class="value-box">
+                <h3>Curiosity</h3>
+                <p>Asking big questions and seeking better answers.</p>
+            </div>
+
+            <div class="value-box">
+                <h3> Courage</h3>
+                <P> Taking bold steps and learning
+                    from mistakes.</P>
+            </div>
+
+            <!-- <div class="value-box">
+                <h3> Creativity</h3>
+                <p> Designing solutions that matter.</p>
+            </div> -->
+
+            <div class="value-box">
+                <h3> Collaboration</h3>
+                <p> Working together across cultures,
+                    disciplines, and ideas.</p>
+            </div>
+            <div class="value-box">
+                <h3>Compassion</h3>
+                <p> Leading with empathy and
+                    responsibility.</p>
+            </div>
+        </div>
+        <div class="ngo-container">
+            <h2 class="ngo-title">Our NGO Compliance Documents</h2>
+            <div class="ngo-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Name of NGO</th>
+                            <td>Lamp foundation Trust</td>
+                        </tr>
+                        <tr>
+                            <th>Address of Head Office</th>
+                            <td>No. 1981, 3th Cross, Shivaji nagar Bengaluru - 960007</td>
+                        </tr>
+                        <tr>
+                            <th>Legal Status</th>
+                            <td>Registered under the Indian Trust Act with Sub Register</td>
+                        </tr>
+                        <tr>
+                            <th>Registration No.</th>
+                            <td>Hph7098776</td>
+                        </tr>
+                        <tr>
+                            <th>Works Since</th>
+                            <td>1st April 2019</td>
+                        </tr>
+                        <tr>
+                            <th>Email Address</th>
+                            <td><a href="mailto:rajsharma@gmail.com">rajveersharma@lampeducationtrust.com</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Website</th>
+                            <td><a href="https://lampfoundation.com"
+                                    target="_blank">https://lampfoundationtrust.com</a></td>
+                        </tr>
+                        <tr>
+                            <th>Organization Contact Numbers</th>
+                            <td>903000000 / 9000000000</td>
+                        </tr>
+                        <tr>
+                            <th>Name of the Contact Person</th>
+                            <td>Rajveer Sharma</td>
+                        </tr>
+                        <tr>
+                            <th>Designation of the Contact Person</th>
+                            <td>Founder and CEO</td>
+                        </tr>
+                        <tr>
+                            <th>Mobile Number of Contact Person</th>
+                            <td>9000000000</td>
+                        </tr>
+                        <tr>
+                            <th>Geographical Area of Work</th>
+                            <td>Pune</td>
+                        </tr>
+                        <tr>
+                            <th>Area of Work</th>
+                            <td>Education, Environmental, Skill Development, Women Empowerment, Youth Empowerment</td>
+                        </tr>
+                        <tr>
+                            <th>Income Tax Exemption U/S 80G</th>
+                            <td> Final Registration is pending from
+                                IT</td>
+                        </tr>
+                        <tr>
+                            <th>Income Tax Exemption under sec 12A</th>
+                            <td> Final Registration is pending from
+                                IT</td>
+                        </tr>
+                        <tr>
+                            <th>PAN Number</th>
+                            <td>uirfh8940</td>
+                        </tr>
+                        <tr>
+                            <th>NITI Ayog NGO Darpan ID</th>
+                            <td>kxjdvnldjf</td>
+                        </tr>
+                        <tr>
+                            <th>CSR Registration Number</th>
+                            <td>jdbulibvlr</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+     <footer>
+            <div class="footer">
+                <div class="footer-image">
+                    <img src="footerimage.png" alt="footerimage" width="100%">
+                </div>
+
+                <div class="footer-text">
+                    <div class="footer-column">
+                        <h2>Business Hours</h2>
+                        <p><strong>Office:</strong><br>
+                            Mon to Sat: 10:00 AM To 7:00 PM IST<br>
+                            Sunday and Government Holidays – Closed
+                        </p>
+                        <p><strong>Donation Centre:</strong><br>
+                            Mon to Sat: 04:00 PM To 8:00 PM IST<br>
+                            Sunday and Government Holidays – Closed
+                        </p>
+                        <p><strong>Donation Counselling Service:</strong><br>
+                            Tues to Fri: 11:00 AM To 8:00 PM IST<br>
+                            Sat and Sun: 09:00 AM To 8:00 PM IST<br>
+                            Monday and Government Holidays – Closed
+                        </p>
+                        <p><strong>Revive Earth Centre:</strong><br>
+                            Mon to Sun: 10:00 AM To 6:00 PM IST
+                        </p>
+                    </div>
+
+                    <div class="footer-column">
+                        <h2>Center Locations</h2>
+                        <p><strong>Office |Study Center | Revive Earth</strong><br>
+                            <span class="icon">📍</span>
+                            <a href="https://maps.google.com/?q=1281,+9th+Cross,+RK+Hegde+Nagar,+Bengaluru+560077"
+                                target="_blank">
+                                1281, 9th Cross, Shivaji nagar,<br>
+                                Pune - 560077<br>
+                                +91 9008701080
+                            </a><br>
+                            <a href="mailto:lampfoundation@gmail.com"></a>
+                            lampfoundatoin@gmail.com</a>
+                        </p>
+
+                        <p><strong>Career Counseling Center</strong><br>
+                            <span class="icon">📍</span>
+                            <a href="https://maps.app.goo.gl/stpzaBh1UL6wqhsZ6" target="_blank">
+                                89, 3th Cross Rd, Shivaji Nagar,<br>
+                                Wakad, Baner, Pune - 560077<br>
+                               +91 900000000
+                            </a><br>
+                            <a href="mailto:growthacademy@gmail.com">growthacademy@gmail.com</a>
+                        </p>
+
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/lamptrust" target="_blank" class="facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/lamptrust/" target="_blank" class="instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/lamptrust/" target="_blank"
+                                class="linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://x.com/lamptrust" target="_blank" class="twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+</body>
+
+</html>
